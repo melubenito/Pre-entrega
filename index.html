@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<!--Elemento <head> provee informaciÃ³n general (metadatos) del documento, incluyendo tÃ­tulo y enlaces a las hojas de estilos.-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Alquimia Azul</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+        <!-- Ãconos de Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- TipografÃ­as de Google-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,200&amp;display=swap" rel="stylesheet" />
+
+        <!-- Estilos CSS (incluye Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .texto-portada {
+                font-family: Helvetica, Arial, sans-serif;
+            }
+
+            body,
+            button,
+            input,
+            textarea,
+            select {
+                font-family: Helvetica, Arial, sans-serif;
+            }
+
+            body {
+                color: #092238;
+                background: #f3f8fb;
+            }
+
+            .font-alt {
+                font-family: Helvetica, Arial, sans-serif !important;
+            }
+
+            .navbar-brand,
+            .nav-link {
+                color: #003153 !important;
+            }
+
+            #mainNav {
+                background: rgba(255, 255, 255, 0.88) !important;
+                backdrop-filter: blur(14px);
+            }
+
+            .btn-primary {
+                background: linear-gradient(135deg, #003153 0%, #0f6b99 100%);
+                border-color: #003153;
+                box-shadow: 0 12px 28px rgba(0, 49, 83, 0.28);
+            }
+
+            .btn-primary:hover {
+                background: linear-gradient(135deg, #001f35 0%, #075078 100%);
+                border-color: #001f35;
+            }
+
+            #frase {
+                background: linear-gradient(135deg, #001f35 0%, #003153 50%, #0f6b99 100%);
+            }
+
+            .portada-pantano {
+                background-image: linear-gradient(90deg, rgba(243, 248, 251, 0.9) 0%, rgba(190, 221, 235, 0.66) 46%, rgba(0, 49, 83, 0.28) 100%), url("assets/img/ciano 2.JPG");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .portada-pantano h1 {
+                color: #003153;
+                font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+                font-size: 5rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                text-shadow: 0 2px 10px rgba(255, 255, 255, 0.85);
+            }
+
+            .portada-pantano p {
+                color: #092238;
+                font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-shadow: 0 2px 8px rgba(255, 255, 255, 0.85);
+            }
+
+            .imagen-portada {
+                display: none;
+            }
+
+            .text-gradient {
+                background: linear-gradient(135deg, #003153 0%, #0f6b99 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .bg-gradient-primary-to-secondary {
+                background: linear-gradient(135deg, #001f35 0%, #003153 50%, #0f6b99 100%) !important;
+            }
+
+            #frase h2 {
+                font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+                font-style: italic;
+                font-weight: 200;
+                letter-spacing: 0;
+            }
+
+            .bg-black {
+                background: linear-gradient(135deg, #001f35 0%, #003153 100%) !important;
+            }
+
+            .marco-imagen-inferior {
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                margin-bottom: 56px;
+                padding: 0;
+            }
+
+            .galeria-ciano {
+                border-radius: 0;
+                overflow: hidden;
+            }
+
+            .galeria-ciano img {
+                aspect-ratio: 16 / 9;
+                border-radius: 0;
+                display: block;
+                height: auto;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .galeria-ciano .carousel-control-prev,
+            .galeria-ciano .carousel-control-next {
+                width: 12%;
+            }
+
+            .galeria-ciano .carousel-control-prev-icon,
+            .galeria-ciano .carousel-control-next-icon {
+                background-color: rgba(0, 49, 83, 0.85);
+                background-size: 58%;
+                border-radius: 50%;
+                height: 44px;
+                width: 44px;
+            }
+
+            .galeria-ciano .carousel-indicators {
+                margin-bottom: 1rem;
+            }
+
+            .galeria-ciano .carousel-indicators [data-bs-target] {
+                background-color: #ffffff;
+                height: 10px;
+                opacity: 0.75;
+                width: 10px;
+            }
+
+            .galeria-ciano .carousel-indicators .active {
+                background-color: #003153;
+                opacity: 1;
+            }
+
+            #features {
+                background: linear-gradient(180deg, #f3f8fb 0%, #d7eaf2 100%);
+            }
+
+            .seccion-cianotipia {
+                background: #f3f8fb;
+                color: #092238;
+                padding: 88px 0;
+            }
+
+            .seccion-cianotipia h2 {
+                color: #003153;
+                font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+                font-size: 2.6rem;
+                font-weight: 900;
+                line-height: 1.08;
+                margin-bottom: 1.35rem;
+            }
+
+            .seccion-cianotipia p {
+                color: #31556d;
+                font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+                font-size: 1.15rem;
+                font-weight: 400;
+                line-height: 1.75;
+                margin-bottom: 0;
+            }
+
+            #features .text-center {
+                background: rgba(255, 255, 255, 0.72);
+                border: 1px solid rgba(0, 49, 83, 0.22);
+                border-radius: 18px;
+                box-shadow: 0 14px 30px rgba(0, 49, 83, 0.1);
+                height: 100%;
+                min-height: 260px;
+                padding: 26px 22px;
+            }
+
+            .titulo-pasos {
+                color: #003153;
+                font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+                font-size: 2.35rem;
+                font-weight: 900;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .hilera-iconos {
+                display: grid;
+                gap: 18px;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .modulo-icono {
+                animation: aparecer-icono 0.7s ease both, flotar-icono 3.4s ease-in-out infinite;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                transform-origin: center;
+            }
+
+            .icono-imagen {
+                display: block;
+                filter: brightness(0) saturate(100%) invert(14%) sepia(77%) saturate(1171%) hue-rotate(177deg) brightness(91%) contrast(102%);
+                height: 86px;
+                margin: 0 auto 1rem;
+                object-fit: contain;
+                width: 86px;
+            }
+
+            .modulo-icono:nth-child(2) .icono-imagen {
+                height: 104px;
+                width: 104px;
+            }
+
+            .modulo-icono:nth-child(1) {
+                animation-delay: 0.05s;
+            }
+
+            .modulo-icono:nth-child(2) {
+                animation-delay: 0.18s;
+            }
+
+            .modulo-icono:nth-child(3) {
+                animation-delay: 0.31s;
+            }
+
+            .modulo-icono:nth-child(4) {
+                animation-delay: 0.44s;
+            }
+
+            .modulo-icono:nth-child(1) .icon-feature {
+                font-size: 3.1rem;
+            }
+
+            .modulo-icono:nth-child(2) .icon-feature {
+                font-size: 4rem;
+            }
+
+            .modulo-icono:nth-child(3) .icon-feature {
+                font-size: 3.45rem;
+            }
+
+            .modulo-icono:nth-child(4) .icon-feature {
+                font-size: 4.35rem;
+            }
+
+            @keyframes aparecer-icono {
+                from {
+                    opacity: 0;
+                    transform: translateY(18px) scale(0.94);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            @keyframes flotar-icono {
+                0%,
+                100% {
+                    translate: 0 0;
+                }
+
+                50% {
+                    translate: 0 -8px;
+                }
+            }
+
+            #features h3 {
+                color: #003153;
+                font-weight: 700;
+                min-height: 58px;
+            }
+
+            #features .text-muted {
+                color: #31556d !important;
+                max-width: 23ch;
+            }
+
+            footer a {
+                color: #b7dff0;
+            }
+
+            .texto-footer {
+                font-family: "Montserrat", Helvetica, Arial, sans-serif;
+            }
+
+            @media (max-width: 768px) {
+                .portada-pantano h1 {
+                    font-size: 3.25rem;
+                }
+
+                .portada-pantano p {
+                    font-size: 1.15rem;
+                }
+
+                .hilera-iconos {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+
+                .galeria-ciano img {
+                    aspect-ratio: 4 / 5;
+                }
+
+                .seccion-cianotipia {
+                    padding: 64px 0;
+                }
+
+                .seccion-cianotipia h2 {
+                    font-size: 2rem;
+                }
+
+                .titulo-pasos {
+                    font-size: 1.9rem;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .hilera-iconos {
+                    grid-template-columns: 1fr;
+                }
+
+                .modulo-icono {
+                    margin-top: 0 !important;
+                }
+            }
+        </style>
+    </head>
+
+
+    <!--El elemento <body> define el cuerpo del HTML, es decir, todo el contenido *visible* en una pÃ¡gina web.-->
+    <body id="page-top">
+
+        <!-- NavegaciÃ³n (barra superior)-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="https://www.fadu.uba.ar/">TINTA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#frase">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Herramientas</a></li>
+                    </ul>
+                    <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" href="https://www.artchemie.com/cianotipo">
+                        <span class="d-flex align-items-center">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            <span class="small">Dónde comprar</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Portada-->
+        <header class="masthead portada-pantano">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+
+                        <!-- Texto de la portada-->
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start texto-portada">
+                            <h1>Alquimia Azul</h1>
+                            <p>Un viaje visual al siglo XIX: el proceso fotográfico artesanal que transforma la luz del sol en impresiones únicas teñidas de azul de Prusia.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 imagen-portada">
+
+                        <!-- Imagen de la portada-->
+                        <img class="img-fluid d-block mx-auto" src="assets/img/pantano.jfif" alt="Pantano" width="560" />
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- MÃ³dulo corto con una cita-->
+        <aside class="text-center bg-gradient-primary-to-secondary" id="frase">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-8">
+                        <h2>"El Arte de Pintar con la Luz del Sol"</h2>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- SecciÃ³n introductoria sobre cianotipia-->
+        <section class="seccion-cianotipia">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10 col-xl-9 text-center">
+                        <h2>Captura la esencia del sol en azul profundo</h2>
+                        <p>La cianotipia es un fascinante procedimiento fotográfico artesanal que fusiona la química, la luz solar y la naturaleza para dar vida a imágenes únicas en un magnético color azul prusia. Esta técnica histórica, que prescinde por completo de las cámaras fotográficas, consiste en emulsionar papel o tela con una solución sensible a los rayos ultravioleta; sobre esta superficie se componen siluetas de plantas, objetos o negativos que, tras ser expuestos al sol y lavados simplemente con agua, revelan formas de una delicadeza asombrosa. Es un proceso donde el azar y la precisión se encuentran, transformando la luz del día en arte eterno y ofreciendo un lienzo perfecto para diseñadores y creativos que buscan conectar con lo hecho a mano y explorar una sensibilidad visual única e irrepetible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MÃ³dulo grande con 4 Ã­conos-->
+        <section id="features">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-12 order-lg-1 mb-5">
+                        <h2 class="titulo-pasos">Cómo crear tu primera cianotipia</h2>
+                        <div class="hilera-iconos">
+                            <!-- Ãcono 1-->
+                            <div class="text-center modulo-icono">
+                                <img class="icono-imagen" src="assets/img/1 gotero.png" alt="Gotero" />
+                                <h3 class="font-alt">1. Emulsión</h3>
+                                <p class="text-muted mb-0">Se mezclan las sales de hierro en la penumbra y se aplican con brocha sobre el papel, volviéndolo sensible a la luz invisible.</p>
+                            </div>
+
+                            <!-- Ãcono 2-->
+                            <div class="text-center modulo-icono">
+                                <img class="icono-imagen" src="assets/img/foto .png" alt="Foto" />
+                                <h3 class="font-alt">2. Negativo</h3>
+                                <p class="text-muted mb-0">Se disponen las plantas, objetos o filminas sobre el papel seco. Estos elementos bloquean la luz y definen las formas de la imagen.</p>
+                            </div>
+
+                            <!-- Ãcono 3-->
+                            <div class="text-center modulo-icono">
+                                <img class="icono-imagen" src="assets/img/3 sol.png" alt="Sol" />
+                                <h3 class="font-alt">3. Exposición</h3>
+                                <p class="text-muted mb-0">El soporte se expone a los rayos UV del sol o de una lámpara, activando la reacción química que fija el diseño en el papel.</p>
+                            </div>
+
+                            <!-- Ãcono 4-->
+                            <div class="text-center modulo-icono">
+                                <img class="icono-imagen" src="assets/img/4 agua.png" alt="Gotas" />
+                                <h3 class="font-alt">4. Revelado</h3>
+                                <p class="text-muted mb-0">El papel se lava con agua fría para eliminar los químicos sobrantes y oxidar el hierro, haciendo aparecer el característico azul de Prusia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mx-auto order-lg-0">
+
+                        <!-- Imagen del mÃ³dulo de Ã­conos-->
+                        <div class="marco-imagen-inferior">
+                            <div id="galeriaCiano" class="carousel slide galeria-ciano" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#galeriaCiano" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Cianotipia 1"></button>
+                                    <button type="button" data-bs-target="#galeriaCiano" data-bs-slide-to="1" aria-label="Cianotipia 2"></button>
+                                    <button type="button" data-bs-target="#galeriaCiano" data-bs-slide-to="2" aria-label="Cianotipia 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/img/ciano5.JPG" alt="Cianotipia 5" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/ciano 6.JPG" alt="Cianotipia 6" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/ciano 7.JPG" alt="Cianotipia 7" />
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCiano" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#galeriaCiano" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Pie de pÃ¡gina (footer)-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2 texto-footer">Conocé más sobre la cianotipia</div>
+                    <a href="https://pin.it/3fhcZXlBY">Inspo</a>
+                    <span class="mx-1">&middot;</span>
+                    <a href="https://www.instagram.com/agustinaruiz.arte/?hl=es">Artista</a>
+                    <span class="mx-1">&middot;</span>
+                    <a href="https://www.youtube.com/watch?v=UA5TCh2lSe0">Tutorial</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- JavaScript de Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        
+        <!-- JavaScript del sitio-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
